@@ -1,0 +1,20 @@
+git init    Initial Git
+git add README.md   / git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/alaminfsd/GitPractice.git
+git push -u origin main
+
+<Error>
+
+            ! [rejected]        main -> main (non-fast-forward)
+            error: failed to push some refs to 'https://github.com/alaminfsd/Gitcode.git'
+</Error>
+<Solution>
+            PS C:\Users\DELL\Desktop\Gitcode> git fetch origin main:tmp
+            From https://github.com/alaminfsd/Gitcode
+             * [new branch]      main       -> tmp
+            PS C:\Users\DELL\Desktop\Gitcode> git rebase tmp
+            Successfully rebased and updated refs/heads/main.
+            PS C:\Users\DELL\Desktop\Gitcode> git push origin HEAD:main
+</Solution>
